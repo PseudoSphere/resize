@@ -1,0 +1,5 @@
+make linethicknes adjustable
+change warnings so they aren't popups
+add instructions
+
+Could make display image it's own component
