@@ -284,34 +284,32 @@ class App extends React.Component {
     const decimals = 100; //2 decimal places
     return (
       <div className="App">
-        <div>
-          <input type="file" id="file" style={{display: 'none'}} onChange={(event) => this.updateDisplayImage(event)}/>
-          <label htmlFor="file" className="fancy-blue-button" accept="image/*">Select Image</label>
-        </div>
-        <div className="giant-image" onClick={event => this.updateDisplay(event)} onScroll={event => this.trackScroll(event)}><img src={this.state.display.src} alt=""/></div>
-        <div>
-          <button className="fancy-blue-button" onClick={() => this.startActive()}>{this.state.start.message}</button>
-          <button className="fancy-blue-button" onClick={() => this.endActive()}>{this.state.end.message}</button>
-        </div>
-        
-        <div className="resize-settings">
+        <div className="settings">
+          <div>
+            <input type="file" id="file" style={{display: 'none'}} onChange={(event) => this.updateDisplayImage(event)}/>
+            <label htmlFor="file" className="fancy-blue-button" accept="image/*">Select Image</label>
+          </div>
           <div>Physical Distance (ft): <input value={this.state.physicalDistance} onChange={event => this.updatePhysical(event)}/></div>
           <div>Desired Scale (Feet Per Inch): <input value={this.state.scale} onChange={event => this.updateScale(event)}/></div>
-        </div>
-        
-        <div><button className="fancy-blue-button" onClick={() => this.resize()}>Resize</button></div>
-        
-        {this.state.download && <div>
+          <div><button className="fancy-blue-button" onClick={() => this.resize()}>Resize</button></div>
+          <div><a href={this.state.resizedImage.src} download>
+            <button className="fancy-blue-button" disabled={!this.state.download}>Download</button>
+          </a></div>
+          {this.state.download && <div>
           <p>Zoom Factor: {Math.round(this.state.zoomFactor * decimals)/decimals}</p>
           <p>Size on Paper: 
             {Math.round(this.state.resizedImage.width / this.pdfPoints * decimals)/decimals}" x 
             {Math.round(this.state.resizedImage.height / this.pdfPoints * decimals)/decimals}"</p>
-        </div>}
-        
-        <div>
-          <a href={this.state.resizedImage.src} download>
-            <button className="fancy-blue-button" disabled={!this.state.download}>Download</button>
-          </a>
+          </div>}
+        </div>
+          
+        <div className="display">
+          <div>
+            <button className="fancy-blue-button" onClick={() => this.startActive()}>{this.state.start.message}</button>
+            <button className="fancy-blue-button" onClick={() => this.endActive()}>{this.state.end.message}</button>
+          </div>
+          <div className="giant-image" onClick={event => this.updateDisplay(event)} onScroll={event => this.trackScroll(event)}><img src={this.state.display.src} alt=""/></div>
+          
         </div>
       </div>
     );

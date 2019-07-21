@@ -1,5 +1,10 @@
-make linethicknes adjustable
+TODO:
+make line-thicknes adjustable
+make margin adjustable
 change warnings so they aren't popups
 add instructions
+update name of save file
 
+Options:
 Could make display image it's own component
+Split across standard page size for printing at home

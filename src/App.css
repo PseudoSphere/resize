@@ -1,21 +1,31 @@
 .App {
-  background-color: #000333;
   font-family: Arial;
   font-size: 15px;
   color: white;
   min-height: 100vh;
-  text-align: center;
 }
 
-.resize-settings {
-  padding: 10px;
+.settings {
+  float: left;
+  padding: 5px;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.settings > div {
+  padding: 5px;
+}
+
+.display {
+  margin: auto;
 }
 
 .giant-image {
-  margin: auto;
   overflow: auto;
-  max-width: 80vw;
-  max-height: 50vw;
+  max-width: 95vw;
+  max-height: 90vh;
+  margin: auto;
 }
 
 /* Got a button of the internetz*/

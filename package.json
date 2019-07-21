@@ -5,14 +5,11 @@
   "homepage": "https://pseudosphere.github.io/resize",
   "dependencies": {
     "blob-stream": "^0.1.3",
-    "images": "^3.0.2",
-    "jspdf": "^1.5.3",
+    "gh-pages": "^2.0.1",
     "pdfkit": "^0.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "resize-image": "^0.1.0",
-    "sharp": "^0.22.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
